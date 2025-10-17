@@ -36,7 +36,9 @@ export async function POST(req: NextRequest) {
       output,
       model 
     });
-  } catch (error: any) {
+  }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  catch (error: any) {
     console.error('Replicate API error:', error);
     return NextResponse.json(
       { error: error.message || 'Failed to generate image' },
