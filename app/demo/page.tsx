@@ -55,10 +55,7 @@ export default function DemoPage() {
       } else {
         setError('未能生成图像');
       }
-
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    catch (err: any) {
+    } catch (err: any) {
       setError(err.message || '生成失败，请稍后重试');
     } finally {
       setLoading(false);
