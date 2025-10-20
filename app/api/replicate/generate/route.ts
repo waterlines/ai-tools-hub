@@ -36,10 +36,10 @@ export async function POST(req: NextRequest) {
       output,
       model 
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Replicate API error:', error);
     return NextResponse.json(
-      { error: error.message || 'Failed to generate image' },
+      { error: (error as Error).message || 'Failed to generate image' },
       { status: 500 }
     );
   }
